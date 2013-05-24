@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('bundles/mhcommon/css/components/grid.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/recruiterrecruit/js/portfolio.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container main">
+	<div class="row">
+		<div class="span12">
+			<h1>Portfolio</h1>
+		</div><!-- span12 -->
+	</div><!-- row -->
+	<div class="row grid">
+		{% for item in portfolio %}
+			<div class="span3">
+				<div class="grid-item btn-add-item">
+					<a href="{{ path('recruiter_recruit_portfolio_edit', {id : item.id}) }}">
+						<img src="{{ asset('bundles/recruitercommon/images/icons/med/cms.png') }}" />
+						<p>{{ item.portfolioitemname }}</p>
+					</a>
+				</div><!-- grid-item -->
+			</div><!-- span3 -->
+		{% endfor %}
+		
+		<div class="span3">
+			<div class="grid-item btn-add-item">
+				<a href="{{ path('recruiter_recruit_portfolio_new', {id : recruit.id}) }}">
+					<img src="{{ asset('bundles/recruitercommon/images/icons/med/cms.png') }}" />
+					<p>Add to your portfolio</p>
+				</a>
+			</div><!-- grid-item -->
+		</div><!-- span3 -->
+	</div><!-- row -->
+	<div class="row">
+		<div class="span12">
+			<a href="{{ path("recruiter_recruit_homepage", {id : recruit.id}) }}" class="btn">Back</a>
+		</div><!-- span12 -->
+	</div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}

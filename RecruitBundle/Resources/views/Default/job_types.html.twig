@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="container main">
+	<div class="row">
+		<div class="span12">
+			<h1>Edit Job Types</h1>
+			
+			<form method="post" class="form form-horizontal">
+				<div class="columns">
+				    {% for job_type in job_types %}
+				    	<div class="control-group">
+				    		<label for="" class="control-label">{{ job_type.jobtypename }}</label>
+				    		<div class="controls">
+				    			<input type="checkbox" name="job_types[{{ job_type.id }}]" {% if recruit.hasJobType(job_type) %}checked="true"{% endif %} />
+			    			</div><!-- controls -->
+			    		</div><!-- control-group -->
+				    {% endfor %}
+			    </div><!-- skills-holder -->
+			
+			    <input type="submit" class="crus-btn" />
+			</form>
+		</div><!-- span12 -->
+	</div>
+</div><!-- container -->
+
+{% endblock %}

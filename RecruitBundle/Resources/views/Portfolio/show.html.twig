@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/recruitercommon/js/profile.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="modal hide fade" id="profile-modal">
+	<div class="modal-header">
+		
+	</div><!-- modal-header -->
+	<div class="modal-body">
+		
+	</div><!-- modal-body -->
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+		<a href="#" class="btn btn-primary submit">Save</a>
+	</div><!-- modal-footer -->
+</div><!-- modal hide -->
+
+<div class="container main">
+	<div class="row">
+		<div class="span11">
+			<h1>{{ entry.portfolioitemname }}</h1>
+		</div><!-- span11 -->
+		<div class="span1 icons">
+			<a 	href="{{ path('recruiter_recruit_portfolio_edit', {id : entry.id}) }}"
+				title="Edit Project" class="trigger-input">
+				
+				<img src="{{ asset('bundles/recruitercommon/images/icons/small/edit.png') }}" 
+					alt="Edit name" />
+			</a>
+		</div><!-- span1 -->
+	</div><!-- row -->
+	<div class="row">
+		<div class="span5">
+			{% for image in entry.uploads %}
+				<img src="{{ image.webpath }}" alt="{{ entry.portfolioitemname }}" />
+				<br /><br />
+			{% endfor %}
+			
+			<div class="btn-group">
+				<a 	href="{{ path('recruiter_common_upload', {mode : 'portfolio', type : 'portfolio_picture', id : entry.id}) }}"
+					title="Add image" class="trigger-input btn">
+					
+					Add an Image
+				</a>
+				<a class="btn" href="{{ entry.portfolioitemhref }}" target="_blank">
+					View Project
+				</a>
+				<a class="btn" href="{{ path('recruiter_recruit_portfolio_homepage', {id : entry.recruit.id}) }}">
+					Back to Portfolio
+				</a>
+			</div><!-- btn-group -->
+		</div><!-- span5 -->
+		<div class="span7">
+			{{ entry.portfolioitembrief|raw }}
+		</div><!-- span7 -->
+	</div><!-- row -->
+</div><!-- container -->
+
+{% endblock %}

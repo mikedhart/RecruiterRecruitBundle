@@ -1,0 +1,25 @@
+{
+    "name": "recruiter/recruit-bundle",
+    "type": "symfony-bundle",
+    "description": "Common functionality for the recruit side of a recruitment site.",
+    "keywords": ["recruiter", "bundle"],
+    "homepage": "https://github.com/mikedhart/RecruiterRecruitBundle.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Hart",
+            "email": "info@mikedhart.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "require-dev": {
+        "symfony/framework-bundle": ">=2.1,<2.2-dev"
+    },
+    "autoload": {
+        "psr-0": { "Recruiter\\RecruitBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Recruiter/RecruitBundle"
+}

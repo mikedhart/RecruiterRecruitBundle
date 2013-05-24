@@ -1,0 +1,58 @@
+{% extends "RecruiterAdminPanelBundle::layout.html.twig" %}
+
+{% block body %}
+	<div class="container main">
+		<div class="row">
+			<div class="span8">
+				<h1>Latest Freelancers</h1>
+
+				<table class="table table-striped">
+				    <thead>
+				        <tr>
+				            <th>First name</th>
+				            <th>Last name</th>
+				            <th>Joined on</th>
+				            <th>Actions</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+					    {% for entity in entities %}
+					        <tr>
+					            <td>{{ entity.user.firstname }}</td>
+					            <td>{{ entity.user.lastname }}</td>
+					            <td>{{ entity.recruitcreatedat|date }}
+					            <td>
+					            	<div class="btn-group">
+					            		<a target="_blank" class="btn" href="{{ path('recruiter_recruit_homepage', { 'id': entity.id }) }}">show</a>
+					            	</div><!-- btn-group -->
+					            </td>
+					        </tr>
+					    {% endfor %}
+				    </tbody>
+				</table>
+			</div><!-- span8 -->
+			<div class="span4">
+				<div class="well">
+					<ul class="nav nav-list">
+						<li class="nav-header">Operations</li>
+						<li {% if path(app.request.attributes.get('_route')) == path('recruit') %} class="active"{% endif %}>
+					        <a href="{{ path('recruit') }}">
+					            Freelancer Panel
+					        </a>
+					    </li>
+					    <li {% if path(app.request.attributes.get('_route')) == path('recruit_search') %} class="active"{% endif %}>
+					        <a href="{{ path('recruit_search') }}">
+					            Search Freelancers
+					        </a>
+					    </li>
+					    <li {% if path(app.request.attributes.get('_route')) == path('recruit_export') %} class="active"{% endif %}>
+					        <a href="{{ path('recruit_export') }}">
+					            Export Freelancers
+					        </a>
+					    </li>
+					</ul>
+				</div><!-- well -->
+			</div><!-- span4 -->
+		</div><!-- row -->
+	</div><!-- container -->
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="container main">
+	<div class="row">
+		<div class="span12">
+			<h1>New Portfolio Item</h1>
+			
+			<form method="post" {{ form_enctype(form) }}>
+			    {{ form_widget(form) }}
+			
+			    <input type="submit" class="crus-btn" />
+			</form>
+		</div><!-- span12 -->
+	</div>
+</div><!-- container -->
+
+{% endblock %}

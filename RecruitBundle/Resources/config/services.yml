@@ -1,0 +1,21 @@
+parameters:
+#    recruiter_recruit.example.class: Recruiter\RecruitBundle\Example
+
+services:
+#    recruiter_recruit.example:
+#        class: %recruiter_recruit.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    recruiter_recruit.profilepage:
+        class:        Recruiter\RecruitBundle\Services\ProfilePage
+        scope:        request
+        arguments:    [@security.context, @doctrine.orm.entity_manager, @request]
+      
+    recruiter_recruit.recruithandler:
+        class:        Recruiter\RecruitBundle\Services\RecruitHandler
+        scope:        request
+        arguments:    [@security.context, @doctrine.orm.entity_manager, @request]
+      
+    recruiter_recruit.portfoliohandler:
+        class:        Recruiter\RecruitBundle\Services\PortfolioHandler
+        scope:        request
+        arguments:    [@security.context, @doctrine.orm.entity_manager, @request]

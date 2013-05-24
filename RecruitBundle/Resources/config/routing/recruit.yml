@@ -1,0 +1,43 @@
+recruit:
+    pattern:  /
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:index" }
+
+recruit_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:show" }
+
+recruit_new:
+    pattern:  /new
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:new" }
+    
+recruit_search:
+    pattern:  /search
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:search" }
+    
+recruit_export:
+    pattern:  /export
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:export" }
+
+recruit_create:
+    pattern:  /create
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:create" }
+    requirements: { _method: post }
+
+recruit_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:edit" }
+
+recruit_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:update" }
+    requirements: { _method: post }
+
+recruit_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:delete" }
+    requirements: { _method: post }
+    
+recruit_chart_data:
+    pattern:  /chart-data
+    defaults: { _controller: "RecruiterRecruitBundle:Recruit:chart" }
+    requirements: { _method: get }

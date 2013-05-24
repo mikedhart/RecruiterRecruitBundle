@@ -1,0 +1,35 @@
+recruiter_recruit_homepage:
+    pattern:  /profile/{id}
+    defaults: { _controller: RecruiterRecruitBundle:Default:index, id: null }
+
+recruiter_recruit_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: RecruiterRecruitBundle:Default:edit }
+    
+recruiter_statement_edit:
+    pattern:  /statement/edit
+    defaults: { _controller: RecruiterRecruitBundle:Default:edit }
+    
+recruiter_recruit_portfolio_homepage:
+    pattern:  /portfolio/{id}
+    defaults: { _controller: RecruiterRecruitBundle:Portfolio:index }
+    
+recruiter_recruit_portfolio_new:
+    pattern:  /portfolio/{id}/new-entry
+    defaults: { _controller: RecruiterRecruitBundle:Portfolio:new }
+          
+recruiter_recruit_portfolio_show:
+    pattern:  /portfolio/{id}/show
+    defaults: { _controller: RecruiterRecruitBundle:Portfolio:show }
+    
+recruiter_recruit_portfolio_edit:
+    pattern:  /portfolio/{id}/edit
+    defaults: { _controller: RecruiterRecruitBundle:Portfolio:edit }
+    
+recruiter_recruit_skills_edit:
+    pattern:  /{id}/edit/skills
+    defaults: { _controller: RecruiterRecruitBundle:Default:editSkills }
+    
+recruiter_recruit_job_types_edit:
+    pattern:  /{id}/edit/job_types
+    defaults: { _controller: RecruiterRecruitBundle:Default:editJobTypes }

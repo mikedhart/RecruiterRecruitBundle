@@ -1,0 +1,57 @@
+<h1>Recruit</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_created_at</th>
+            <td>{{ entity.recruitcreatedat }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_updated_at</th>
+            <td>{{ entity.recruitupdatedat }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_gender</th>
+            <td>{{ entity.recruitgender }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_phone_number</th>
+            <td>{{ entity.recruitphonenumber }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_dob</th>
+            <td>{{ entity.recruitdob }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_job_title</th>
+            <td>{{ entity.recruitjobtitle }}</td>
+        </tr>
+        <tr>
+            <th>Recruit_personal_statement</th>
+            <td>{{ entity.recruitpersonalstatement }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('recruit') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('recruit_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('recruit_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

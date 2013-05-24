@@ -1,0 +1,10 @@
+Recruiter\RecruitBundle\Entity\PortfolioEntry:
+    properties:
+        file:
+            - File:
+                maxSize: 200000
+                mimeTypes:       
+                    - 'image/jpg'
+                    - 'image/jpeg'
+                    - 'image/png'
+                    - 'application/pdf'       
